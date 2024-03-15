@@ -1,0 +1,4529 @@
+{
+	"info": {
+		"_postman_id": "5b675ffc-8b0f-431d-b11b-7979aa09b0af",
+		"name": "Estatemart",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14717866"
+	},
+	"item": [
+		{
+			"name": "Area",
+			"item": [
+				{
+					"name": "Area List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/area/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Parent Area List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/area/parentAreaList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"parentAreaList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Child Area List By Parent ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/area/childAreaList/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"childAreaList",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Area Active List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/area/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Area Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/area/details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Area",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Mirpur\",\r\n    \"parent_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/area/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Area",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 12,\r\n    \"title\": \"Farmgate\",\r\n    \"parent_id\": 1\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/area/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"update"
+							]
+						},
+						"description": "Put Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Area",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/area/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Area Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/area/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"area",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "System User (Agent + General User)",
+			"item": [
+				{
+					"name": "Agent",
+					"item": [
+						{
+							"name": "Public",
+							"item": [
+								{
+									"name": "Agent list",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{base_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/system-user/public-agent-list",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"system-user",
+												"public-agent-list"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "agent search",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{base_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0,\r\n    \"name\": \"Shovon\",\r\n    \"email\": \"shovon8\",\r\n    \"phone\": \"01671794065\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/system-user/public-agent-list",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"system-user",
+												"public-agent-list"
+											]
+										},
+										"description": "### No field is mandatory"
+									},
+									"response": []
+								},
+								{
+									"name": "Agent Details",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{base_token}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{base_url}}/system-user/agent-public-details/21",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"system-user",
+												"agent-public-details",
+												"21"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Agent wise Property  (Public)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "x-access-token",
+												"value": "{{base_token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 0,\r\n    \"user_id\" : 21\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/property/agent-wise-property-list",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"property",
+												"agent-wise-property-list"
+											]
+										},
+										"description": "Post Method:\n\nSend the limit and offset value;\n\ntype: -> not mandatory , 1 = active, 2 = deactive , 3 = pending"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Agent list",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/system-user/agent-list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"system-user",
+										"agent-list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "agent search",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0,\r\n    \"name\": \"Shovon\",\r\n    \"email\": \"shovon8\",\r\n    \"phone\": \"01671794065\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/system-user/agent-list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"system-user",
+										"agent-list"
+									]
+								},
+								"description": "### No field is mandatory"
+							},
+							"response": []
+						},
+						{
+							"name": "Agent Details",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/system-user/details/21",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"system-user",
+										"details",
+										"21"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "system-user List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/system-user/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "system user Active List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/system-user/active-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"active-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "system user list",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/system-user/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "system user search",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0,\r\n    \"name\": \"Shovon\",\r\n    \"email\": \"shovon8\",\r\n    \"phone\": \"01671794065\",\r\n    \"user_type\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/system-user/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"list"
+							]
+						},
+						"description": "**user_type** : value should be : 2 or 3 or 4\n\n### . No field is mandatory"
+					},
+					"response": [
+						{
+							"name": "system user search",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"limit\": 5,\r\n    \"offset\": 0,\r\n    \"name\": \"Shovon\",\r\n    \"email\": \"shovon8\",\r\n    \"phone\": \"01671794065\",\r\n    \"user_type\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/system-user/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"system-user",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-hocV7uipDXJAM+ilynCAJWe93KI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 23 Feb 2023 20:24:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"systemUser List.\",\n    \"image_folder_path\": \"http://localhost:3004/user-profile-image\",\n    \"count\": 1,\n    \"data\": [\n        {\n            \"id\": 14,\n            \"name\": \"Shovon 11\",\n            \"email\": \"shovon8@mn.com\",\n            \"phone\": \"01671794065\",\n            \"user_type\": 3,\n            \"profile_image\": \"default_profile_image.png\",\n            \"status\": 1,\n            \"user_id\": 21\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "System User Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/system-user/details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update system user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"profile_id\": 2,\r\n    \"name\": \"Shovon 1\",\r\n    \"email\": \"shovon1@gmai6.com\",\r\n    \"phone\": \"01671794065\",\r\n    \"user_type\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/system-user/update-profile",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"update-profile"
+							]
+						},
+						"description": "Put Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete system user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/system-user/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change system-user Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/system-user/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"system-user",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banners",
+			"item": [
+				{
+					"name": "Banner List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active Banner List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Banner List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"list"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": []
+				},
+				{
+					"name": "Banner Front End List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"banner_type\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/bannerFrontendList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"bannerFrontendList"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": [
+						{
+							"name": "Banner Front End List",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"banner_type\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/banner/bannerFrontendList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"banner",
+										"bannerFrontendList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "937"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a9-SPqBtaTOHJ4os2Hg5wmqoZEvFmA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 14 Nov 2022 11:07:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Banner List.\",\n    \"count\": 3,\n    \"imageFolderPath\": \"http://localhost:3004/banner\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"banner_type\": 1,\n            \"from_date\": \"2022-11-08T00:00:00.000Z\",\n            \"to_date\": \"2022-12-03T00:00:00.000Z\",\n            \"image\": \"1668423418889-boy.jpg\",\n            \"details\": null,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-11-14T14:42:24.000Z\",\n            \"updated_at\": \"2022-11-14T16:56:58.000Z\"\n        },\n        {\n            \"id\": 6,\n            \"banner_type\": 1,\n            \"from_date\": \"2022-11-14T00:00:00.000Z\",\n            \"to_date\": \"2022-11-16T00:00:00.000Z\",\n            \"image\": \"1668423995323-carasti.png\",\n            \"details\": null,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-11-14T17:06:35.000Z\",\n            \"updated_at\": \"2022-11-14T17:06:35.000Z\"\n        },\n        {\n            \"id\": 7,\n            \"banner_type\": 1,\n            \"from_date\": \"2022-11-14T00:00:00.000Z\",\n            \"to_date\": \"2022-11-14T00:00:00.000Z\",\n            \"image\": \"1668424007983-carasti.png\",\n            \"details\": null,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-11-14T17:06:47.000Z\",\n            \"updated_at\": \"2022-11-14T17:06:47.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Banner Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/banner/details/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"details",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Banner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "banner_type",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "from_date",
+									"value": "2022-11-30",
+									"type": "text"
+								},
+								{
+									"key": "to_date",
+									"value": "2022-12-04",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/carasti.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\n\"image\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Banner",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "banner_type",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "from_date",
+									"value": "2022-11-30",
+									"type": "text"
+								},
+								{
+									"key": "to_date",
+									"value": "2022-12-04",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/carasti.png"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"update"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\n\"image\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Banner",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Banner Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/banner/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"banner",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blogs",
+			"item": [
+				{
+					"name": "Blog List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active Blog List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Blog List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"list"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": []
+				},
+				{
+					"name": "Blog Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/blog/details/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"details",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Design and Development2",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida quis libero eleifend ornare. Maecenas mattis enim at arcu feugiat, sit amet blandit nisl iaculis. Donec lacus odio, malesuada eu libero sit amet, congue aliquam leo. In hac habitasse platea dictumst.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/unnamed.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\n\"image\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Blog",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Temper",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "sfsa",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/defult_cover_image.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"update"
+							]
+						},
+						"description": "PUT Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Blog Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/blog/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"blog",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Category List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/categories/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/categories/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"categories",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1017"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3f9-LmV5C1K6e3vGuIOMGsHjs7Blccc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Nov 2022 04:12:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Category List.\",\n    \"count\": 6,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Apartment\",\n            \"status\": 1,\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2022-11-15T10:02:42.000Z\",\n            \"updated_at\": \"2022-11-15T10:02:42.000Z\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Commercial\",\n            \"status\": 1,\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2022-11-15T10:02:53.000Z\",\n            \"updated_at\": \"2022-11-15T10:02:53.000Z\"\n        },\n        {\n            \"id\": 3,\n            \"title\": \"Hotel and Resort\",\n            \"status\": 1,\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2022-11-15T10:03:32.000Z\",\n            \"updated_at\": \"2022-11-15T10:03:32.000Z\"\n        },\n        {\n            \"id\": 4,\n            \"title\": \"House\",\n            \"status\": 1,\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2022-11-15T10:03:32.000Z\",\n            \"updated_at\": \"2022-11-15T10:03:32.000Z\"\n        },\n        {\n            \"id\": 5,\n            \"title\": \"Land\",\n            \"status\": 1,\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2022-11-15T10:04:04.000Z\",\n            \"updated_at\": \"2022-11-15T10:04:04.000Z\"\n        },\n        {\n            \"id\": 6,\n            \"title\": \"Room Mate/Sublet\",\n            \"status\": 1,\n            \"created_by\": null,\n            \"updated_by\": null,\n            \"created_at\": \"2022-11-15T10:04:04.000Z\",\n            \"updated_at\": \"2022-11-15T10:04:04.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Company Details",
+			"item": [
+				{
+					"name": "Company Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/company-info/details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company-info",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "company_name",
+									"value": "Temper",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/defult_cover_image.png"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "fax",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "fb_link",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "twitter_link",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "youtube_link",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "youtube_video_key",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "footer_one",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "footer_two",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "gps_coordinates",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/company-info/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"company-info",
+								"update"
+							]
+						},
+						"description": "PUT Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Indoor Amenities",
+			"item": [
+				{
+					"name": "Indoor Amenities  List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Indoor Amenities Active List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Indoor Amenities List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"list"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": []
+				},
+				{
+					"name": "Indoor Amenities Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Indoor Amenities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"AC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Indoor Amenities",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1,\r\n    \"title\" : \"Sink\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"update"
+							]
+						},
+						"description": "Put Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Indoor Amenities",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Indoor Amenities Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/indoor-amenities/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"indoor-amenities",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();\r",
+									"\r",
+									"if (jsonData.success === true) {\r",
+									"    let access = jsonData.data.token;\r",
+									"    pm.environment.set(\"base_token\", access);\r",
+									"    pm.collectionVariables.set(\"base_token\", access);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_email_or_phone\": \"isheiblu@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/authentication/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"authentication",
+								"login"
+							]
+						},
+						"description": "User must provide **user_name/email** and **password.**"
+					},
+					"response": [
+						{
+							"name": "Admin login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_email_or_phone\": \"isheiblu@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/authentication/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"authentication",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "799"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31f-G8OAV2FjJzPS7+J8lHIDz50q9cE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Oct 2022 18:30:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the system.\",\n    \"data\": {\n        \"email\": \"isheiblu@gmail.com\",\n        \"role\": {\n            \"role_id\": 1,\n            \"role_name\": \"admin\"\n        },\n        \"profile\": {\n            \"name\": \"Ashraful Islam\",\n            \"email\": \"isheiblu@gmail.com\",\n            \"status\": 1,\n            \"user_id\": 1\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfdG9rZW4iOiJmM2ZlNDk2MWI3NjE4NjM4NmQ1MzM4NDZjODExM2I3ZCIsImVtYWlsIjoiaXNoZWlibHVAZ21haWwuY29tIiwicm9sZSI6eyJyb2xlX2lkIjoxLCJyb2xlX25hbWUiOiJhZG1pbiJ9LCJwcm9maWxlIjp7Im5hbWUiOiJBc2hyYWZ1bCBJc2xhbSIsImVtYWlsIjoiaXNoZWlibHVAZ21haWwuY29tIiwic3RhdHVzIjoxLCJ1c2VyX2lkIjoxfSwidGltZV9wZXJpb2QiOjE2NjY0NjcwNTcwNDQsImlkZW50aXR5X2lkIjoiYmEwZjczYTgtYWI2YS00YzA3LTk3ZDgtMjM5NTk5NzY1Yjc1IiwiaWF0IjoxNjY2NDYzNDU3LCJleHAiOjE2NjY1NDk4NTd9.iUpiUzlCfR-Ll1H3TGpTZNHPsifG7WHFivdpMHntJa8\",\n        \"id\": 1,\n        \"imageFolderPath\": \"http://localhost:3004/Admin-image\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Password Change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\": \"etgbvehnbusER@#123y1\",\r\n    \"old_password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/password-change",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"password-change"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "password Change",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"new_password\": \"123456\",\r\n    \"old_password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/password-change",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"password-change"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-iN543mEEY5S90cLtDKuwO02iQCk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Jan 2022 06:12:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"Password change successfully done\"\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/authentication/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"authentication",
+								"logout"
+							]
+						},
+						"description": "Only logged in user can logout.  \n  \nNote: already logging user can logging with out logout or time expired."
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"isheiblu@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/forgetPasswordRequest",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"forgetPasswordRequest"
+							]
+						},
+						"description": "User should Provide his email"
+					},
+					"response": [
+						{
+							"name": "Forget Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"shovon@medinatech.co\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/forgetPasswordRequest",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"forgetPasswordRequest"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"53-KoAm+87ILA+b1p+92uJcUaKqA+0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 09:12:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 201,\n    \"message\": \"Check your email for reset password link.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Reset Password Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"resetToken\" : \"a884286210f24de5f0d3139f33a8c5991644796cbcf1850cb609081a828d7ae2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/verifyResetToken",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"verifyResetToken"
+							]
+						},
+						"description": "Verify the token , the link sent on the email should be verified by user.  \n  \nReset token verification, Post request"
+					},
+					"response": [
+						{
+							"name": "Verify Reset Password Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"resetToken\" : \"87c8c3fcc60e920d684855f0ab72aaaf2926c1d3d9a63ea862b31c1aecfeb854\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/verifyResetToken",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"verifyResetToken"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-aHuwGaN6BzqS2p7SvWjL7meURUI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Jan 2022 10:12:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"User found\",\n    \"data\": [\n        {\n            \"id\": 53,\n            \"user_name\": \"Stefen22\",\n            \"email\": \"shovon@medinatech.co\",\n            \"phone\": \"+12220196556\",\n            \"password\": \"$2b$10$31/xiHRwItr.IFL3OU1PM.GO5nSJ/X9XfV7glIkoSEc9imMJJgH0W\",\n            \"status\": 1,\n            \"role_id\": 2,\n            \"profile_id\": 4,\n            \"updated_by\": 1,\n            \"updated_at\": \"2022-01-24T05:32:21.000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password By Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"new_password\": \"123456\",\r\n    \"confirm_password\": \"123456\",\r\n    \"resetToken\": \"a884286210f24de5f0d3139f33a8c5991644796cbcf1850cb609081a828d7ae2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/resetPasswordByToken",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"resetPasswordByToken"
+							]
+						},
+						"description": "Provide new , old password - Reset token should be given"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Outdoor Amenities",
+			"item": [
+				{
+					"name": "Outdoor Amenities  List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outdoor Amenities Active List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Outdoor Amenities List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"list"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": []
+				},
+				{
+					"name": "Outdoor Amenities Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/details/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Outdoor Amenities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"AC5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Outdoor Amenities",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1,\r\n    \"title\" : \"AC$\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"update"
+							]
+						},
+						"description": "Put Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Outdoor Amenities",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Outdoor Amenities Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/outdoor-amenities/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"outdoor-amenities",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Package",
+			"item": [
+				{
+					"name": "Package List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/package/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Package List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/package/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"package",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1056"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"420-+wKA8iKThl08HQZu9uWESHBH1V8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Aug 2022 10:21:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Package List.\",\n    \"count\": 4,\n    \"data\": [\n        {\n            \"id\": 8,\n            \"title\": \"6 Month\",\n            \"duration\": 180,\n            \"price\": 100,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 20,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:25:23.000Z\",\n            \"updated_at\": \"2022-08-28T08:19:17.000Z\",\n            \"userUnderThisPackage\": 1\n        },\n        {\n            \"id\": 9,\n            \"title\": \"12 Month\",\n            \"duration\": 365,\n            \"price\": 300,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 6.67,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:25:39.000Z\",\n            \"updated_at\": \"2022-08-28T08:19:17.000Z\",\n            \"userUnderThisPackage\": 0\n        },\n        {\n            \"id\": 10,\n            \"title\": \"3 Month\",\n            \"duration\": 90,\n            \"price\": 50,\n            \"discount_amount\": 0,\n            \"discount_percentage\": 0,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:26:16.000Z\",\n            \"updated_at\": \"2022-08-28T05:22:44.000Z\",\n            \"userUnderThisPackage\": 0\n        },\n        {\n            \"id\": 11,\n            \"title\": \"4 Month\",\n            \"duration\": 3,\n            \"price\": 50,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 40,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-28T09:17:42.000Z\",\n            \"updated_at\": \"2022-08-28T09:17:42.000Z\",\n            \"userUnderThisPackage\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Package Active List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/package/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"activeList"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Package Active List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/package/activeList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"package",
+										"activeList"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1056"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"420-+wKA8iKThl08HQZu9uWESHBH1V8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Aug 2022 10:22:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Package List.\",\n    \"count\": 4,\n    \"data\": [\n        {\n            \"id\": 8,\n            \"title\": \"6 Month\",\n            \"duration\": 180,\n            \"price\": 100,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 20,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:25:23.000Z\",\n            \"updated_at\": \"2022-08-28T08:19:17.000Z\",\n            \"userUnderThisPackage\": 1\n        },\n        {\n            \"id\": 9,\n            \"title\": \"12 Month\",\n            \"duration\": 365,\n            \"price\": 300,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 6.67,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:25:39.000Z\",\n            \"updated_at\": \"2022-08-28T08:19:17.000Z\",\n            \"userUnderThisPackage\": 0\n        },\n        {\n            \"id\": 10,\n            \"title\": \"3 Month\",\n            \"duration\": 90,\n            \"price\": 50,\n            \"discount_amount\": 0,\n            \"discount_percentage\": 0,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:26:16.000Z\",\n            \"updated_at\": \"2022-08-28T05:22:44.000Z\",\n            \"userUnderThisPackage\": 0\n        },\n        {\n            \"id\": 11,\n            \"title\": \"4 Month\",\n            \"duration\": 3,\n            \"price\": 50,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 40,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-28T09:17:42.000Z\",\n            \"updated_at\": \"2022-08-28T09:17:42.000Z\",\n            \"userUnderThisPackage\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Package List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 3,\r\n    \"offset\" : 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/package/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"list"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": [
+						{
+							"name": "Package List",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"limit\" : 3,\r\n    \"offset\" : 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/package/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"package",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "812"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32c-8KA1q0HVIMvHP+YmJUN5eIzfbxw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 28 Aug 2022 10:22:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"Package List.\",\n    \"count\": 3,\n    \"data\": [\n        {\n            \"id\": 8,\n            \"title\": \"6 Month\",\n            \"duration\": 180,\n            \"price\": 100,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 20,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:25:23.000Z\",\n            \"updated_at\": \"2022-08-28T08:19:17.000Z\",\n            \"userUnderThisPackage\": 1\n        },\n        {\n            \"id\": 9,\n            \"title\": \"12 Month\",\n            \"duration\": 365,\n            \"price\": 300,\n            \"discount_amount\": 20,\n            \"discount_percentage\": 6.67,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:25:39.000Z\",\n            \"updated_at\": \"2022-08-28T08:19:17.000Z\",\n            \"userUnderThisPackage\": 0\n        },\n        {\n            \"id\": 10,\n            \"title\": \"3 Month\",\n            \"duration\": 90,\n            \"price\": 50,\n            \"discount_amount\": 0,\n            \"discount_percentage\": 0,\n            \"status\": 1,\n            \"created_by\": 1,\n            \"updated_by\": 1,\n            \"created_at\": \"2022-08-04T10:26:16.000Z\",\n            \"updated_at\": \"2022-08-28T05:22:44.000Z\",\n            \"userUnderThisPackage\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Package Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/package/details/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"details",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"title\": \"12 Month\",\r\n    \"duration\": \"365\",\r\n    \"price\": \"1000\",\r\n    \"discount_amount\": 800\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/package/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\", (does not start with number , special character , length should be between 2 to 50 characters.)\n\n\"duration\", ( Setting it as day\"\n\n\"price\" is number,\n\nare mandatory.\n\n\"discount_amount\" is how much money to be discounted from the actual price. it is optional"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Package",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"title\": \"12 Month\",\r\n    \"duration\": 365,\r\n    \"price\": 600,\r\n    \"discount_amount\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/package/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"update"
+							]
+						},
+						"description": "Put Method:\n\n\"title\", (does not start with number , special character , length should be between 2 to 50 characters.)\n\n\"duration\", ( Setting it as day\"\n\n\"price\" is number,\n\nare mandatory.\n\n\"discount_amount\" is how much money to be discounted from the actual price. it is optional"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Package",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/package/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change  Package Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/package/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"package",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Propertites",
+			"item": [
+				{
+					"name": "Public",
+					"item": [
+						{
+							"name": "Public Details",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									},
+									{
+										"key": "directions_id",
+										"value": "49ad8e0a-fca7-4b6b-928a-541a4575edfc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" : 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/property/publicDetails",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"property",
+										"publicDetails"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Property List (Public)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 0,\r\n    \"category\": 2,\r\n    \"purpose\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/property/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"property",
+										"list"
+									]
+								},
+								"description": "Post Method:\n\nSend the limit and offset value;\n\ntype: -> not mandatory , 1 = active, 2 = deactive , 3 = pending"
+							},
+							"response": []
+						},
+						{
+							"name": "Agent wise Property  (Public)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 0,\r\n    \"user_id\" : 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/property/agent-wise-property-list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"property",
+										"agent-wise-property-list"
+									]
+								},
+								"description": "Post Method:\n\nSend the limit and offset value;\n\ntype: -> not mandatory , 1 = active, 2 = deactive , 3 = pending"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Properties",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "property_name",
+									"value": "This is propertity_name",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "This is address",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "1",
+									"description": "* fixed 6 ta (1 to 6)",
+									"type": "text"
+								},
+								{
+									"key": "location",
+									"value": "1",
+									"description": "* api",
+									"type": "text"
+								},
+								{
+									"key": "area",
+									"value": "2",
+									"description": "* api",
+									"type": "text"
+								},
+								{
+									"key": "purpose",
+									"value": "1",
+									"description": "*  1= sell 2 = rent",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "This is details",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This is a description",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "1200",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "bedroom",
+									"value": "4",
+									"description": "1,3, 4, 5",
+									"type": "text"
+								},
+								{
+									"key": "bathroom",
+									"value": "1",
+									"description": "1,2, 4, 5",
+									"type": "text"
+								},
+								{
+									"key": "price_per_sqft",
+									"value": "50",
+									"description": "1,",
+									"type": "text"
+								},
+								{
+									"key": "total_price",
+									"value": "5000",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "owner_ship",
+									"value": "1",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "floor",
+									"value": "3",
+									"description": "1,2, 5",
+									"type": "text"
+								},
+								{
+									"key": "indoor_amenities",
+									"value": "2",
+									"description": "1,2,3,4,5  ( api active list )",
+									"type": "text"
+								},
+								{
+									"key": "outdoor_amenities",
+									"value": "3",
+									"description": "1,2,3,4,5  ( api active list )",
+									"type": "text"
+								},
+								{
+									"key": "distance",
+									"value": "{ \"name\": \"hospital\", \"distance\" : 10   }",
+									"description": "*",
+									"type": "text"
+								},
+								{
+									"key": "floor_image",
+									"description": "1,2,3,4,5",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/floor_image.jpg"
+								},
+								{
+									"key": "property_image",
+									"description": "*",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/Group 47.png"
+								},
+								{
+									"key": "property_image",
+									"description": "*",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Desktop/oops.png"
+								},
+								{
+									"key": "size_calculation_method",
+									"value": "1",
+									"description": "3, 6",
+									"type": "text"
+								},
+								{
+									"key": "unit_size",
+									"value": "135",
+									"description": "3",
+									"type": "text"
+								},
+								{
+									"key": "total_unit",
+									"value": "150",
+									"description": "3",
+									"type": "text"
+								},
+								{
+									"key": "total_floor",
+									"value": "3",
+									"description": "3",
+									"type": "text"
+								},
+								{
+									"key": "indoor_amenities",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "front_road",
+									"value": "100",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/property/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"property",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters."
+					},
+					"response": []
+				},
+				{
+					"name": "Details  ( Admin & System user)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							},
+							{
+								"key": "directions_id",
+								"value": "49ad8e0a-fca7-4b6b-928a-541a4575edfc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/property/details",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"property",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "make-feature",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							},
+							{
+								"key": "directions_id",
+								"value": "49ad8e0a-fca7-4b6b-928a-541a4575edfc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"property_id\" : 1,\r\n    \"is_featured\": 0,\r\n    \"from_date\": \"2022-11-30\",\r\n    \"to_date\": \"2022-12-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/property/make-feature",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"property",
+								"make-feature"
+							]
+						},
+						"description": "StartFragment\n\nis_featured = 1 / 0 ; 1 = true, 0 = false\n\nEndFragment"
+					},
+					"response": []
+				},
+				{
+					"name": "property List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/property/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"property",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active property List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/property/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"property",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Property  List & Search( System user and ADMIN)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 0,\r\n    \"type\": 1,\r\n    \"purpose\": 1,\r\n    \"category\": 2,\r\n    \"agent_name\": \"Shovon\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/property/property-list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"property",
+								"property-list"
+							]
+						},
+						"description": "Post Method:\n\nSend the limit and offset value;\n\ntype: -> not mandatory , 1 = active, 2 = deactive , 3 = pending"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Service List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Active Service List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/activeList",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"activeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Service List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limit\" : 2,\r\n    \"offset\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"list"
+							]
+						},
+						"description": "Post Method:  \n  \nSend the limit and offset value"
+					},
+					"response": []
+				},
+				{
+					"name": "Service Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/service/details/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"details",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Service",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Design and Development2",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida quis libero eleifend ornare. Maecenas mattis enim at arcu feugiat, sit amet blandit nisl iaculis. Donec lacus odio, malesuada eu libero sit amet, congue aliquam leo. In hac habitasse platea dictumst.",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/unnamed.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/service/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"add"
+							]
+						},
+						"description": "Post Method:\n\n\"title\"\n\n\"image\"\n\nis mandatory\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Temper",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MEDINA TECH/Downloads/defult_cover_image.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/service/update",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"update"
+							]
+						},
+						"description": "PUT Method:\n\nTitle : does not start with number , special character , length should be between 2 to 50 characters.\n\nImage : Should be less than 5 MB, Format - PNG,JPG,JPEG\n\n\"role_id\" : should be an array."
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Service",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/delete",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"delete"
+							]
+						},
+						"description": "Send the table Id in a Delete Method"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Service Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 2\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/service/changeStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"service",
+								"changeStatus"
+							]
+						},
+						"description": "Send the table Id in a \"Put\" Method"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "User Profile(ME)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{base_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/user/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Profile(ME)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/user/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "338"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"152-Mf1JKcSbajtauhLhbC/gZdMfvGg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 19 Jun 2022 05:59:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"data\": {\n        \"id\": 1,\n        \"first_name\": \"Ashraful Islam\",\n        \"last_name\": \"Sheiblu\",\n        \"email\": \"shovosn@medinatech.co\",\n        \"phone\": \"01671794064\",\n        \"profile_image\": \"default_profile_image.png\",\n        \"role\": {\n            \"role_id\": 1,\n            \"role_name\": \"Super Admin\"\n        },\n        \"imageFolderPath\": \"http://localhost:3001/user-profile-image\",\n        \"user_name\": \"isheiblu\",\n        \"user_id\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Change User Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/changeUserStatus",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"changeUserStatus"
+							]
+						},
+						"description": "Send user id in body"
+					},
+					"response": [
+						{
+							"name": "Change User Status",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" : 67\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/changeUserStatus",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"changeUserStatus"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "62"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3e-l4RVIWyviOWgndbnWJyFINQsBJQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 06 Feb 2022 12:02:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"User Status Changed.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/deleteUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"deleteUser"
+							]
+						},
+						"description": "Send user id in body"
+					},
+					"response": [
+						{
+							"name": "Delete Users",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\" : 58\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/deleteOtherUser",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"deleteOtherUser"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-IefS6YvgraCXjFNpMlksbpRqc+8\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Feb 2022 04:09:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"message\": \"User deleted successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User name check",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\": \"shovon56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/check-user-name",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"check-user-name"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user name check",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "default",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_name\": \"isheiblu5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/check-user-name",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"check-user-name"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "102"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"66-7BSupFdPi4wEs8yjvnAyV8d4YEA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Jan 2022 03:58:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"success\": true,\n    \"message\": \"You can use this user name.\",\n    \"data\": {\n        \"user-name\": \"isheiblu5\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "user registration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{base_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Shovon 3\",\r\n    \"email\": \"shovon8@gmai6.com\",\r\n    \"phone\": \"01671794064\",\r\n    \"password\": \"123456\",\r\n    \"confirm_password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/registration",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"registration"
+							]
+						},
+						"description": "## Mandatary field:\n\n\"name *, email *, password *, user_type *, referal_link, package_id\n\n**name**: String, max: length: 150, min: 3\n\n**password:** String, max length: 30, min: 6\n\n**user_type** : int ( 3: parents, 4: Teen)\n\n**referral_link**: String, max length: 30, min: 6\n\nStartFragment\n\n**package_id**: int\n\nEndFragment\n\n###### ***\\-- Note --***\n\nif user_type = 3/4 then he/she can use the referral_link.  \nif user_type = 3 then he/she can use the package_id.\n\nAt a time, user ( user_type = 3/4) can only use one referral_link or package_id.\n\nif user ( user_type = 3/4) not select referral_link or package_id, then user goes to free trial."
+					},
+					"response": [
+						{
+							"name": "user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{base_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Shovon 3\",\r\n    \"email\": \"shovon8@gmai6.com\",\r\n    \"phone\": \"01671794064\",\r\n    \"password\": \"123456\",\r\n    \"confirm_password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/registration",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"registration"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-rdwAh9G/6heDFOAzjJHc3JOjGfg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Oct 2022 13:43:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"status\": 400,\n    \"message\": \" Email already in Use. Phone already in Use.\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3004/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "base_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

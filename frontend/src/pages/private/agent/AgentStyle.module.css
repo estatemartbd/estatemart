@@ -1,0 +1,11 @@
+.thumb {
+  height: 80px;
+  max-width: 80px;
+  margin: 0;
+  position: relative;
+}
+
+img {
+  /* opacity: 0.6; */
+  object-fit: cover;
+}

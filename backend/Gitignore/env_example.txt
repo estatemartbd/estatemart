@@ -1,0 +1,48 @@
+DB_HOST_v1=localhost
+DB_USER_v1=root
+DB_PASS_v1=""
+DB_DATABASE_v1=estate
+
+
+frontend_url="http://localhost:3000"
+backend_url="http://localhost:3004"
+
+admin_image_path_name = "/Admin-image"
+admin_image_path = "public/upload/images/admin-images/"
+
+user_profile_image_path_name = "/user-profile-image"
+user_profile_image_path = "public/upload/images/profile/"
+
+service_image_path_name = "/service"
+service_image_path = "public/upload/images/service/"
+
+blog_image_path_name = "/blog"
+blog_image_path = "public/upload/images/blog/"
+
+banner_image_path_name = "/banner"
+banner_image_path = "public/upload/images/banner/"
+
+property_image_path_name = "/property_image"
+property_image_path = "public/upload/images/property_image/"
+
+company_logo_image_path_name = "/company-logo"
+company_logo_image_path = "public/upload/images/company-logo/"
+
+
+workshop_vat_percentage = 0
+
+send_email_host="smtp.zoho.com"
+send_email_address="y4tube4@gmail.com"
+send_email_password="lrmvqowfghrshktn"
+
+smsUrl="http://66.45.237.70/api.php"
+smsUserName="vividgallery"
+smsPassword="ASZUEKVX"
+
+
+adminPhoneNo=""
+adminEmailAddress=""
+
+
+ #TZ = 'Etc/GMT-2';
+
